@@ -8,9 +8,10 @@ API automation project using:
 - Chai
 
 Implemented scenarios:
-- Create token
+
+- Create authentication token
 - Create booking
-- Get booking by id
+- Get created booking by ID
 - Update booking
 - Delete booking
 
@@ -19,3 +20,4 @@ Run tests:
 ```bash
 npm install
 npm run test:api
+```
