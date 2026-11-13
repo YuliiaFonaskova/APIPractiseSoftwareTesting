@@ -96,7 +96,7 @@ tests/
 - Layered architecture (`Core` → `Business` → `Tests`)
 - Native Node.js `fetch` HTTP client wrapper (`BaseApiClient`)
 - Isolated test execution with Mocha hooks (`before` / `beforeEach`)
-- Automatic retry (`retries: 2`) for transient network issues
+- Test retries disabled (`retries: 0`) — failures are reported immediately instead of being masked
 - Environment variables configured via `.env` and `dotenv`
 - HTML and JSON test reports generated via `mochawesome`
 - CI integration with **GitHub Actions** (using `API_USERNAME` and `API_PASSWORD` secrets, with default demo fallbacks)
@@ -104,6 +104,8 @@ tests/
 ---
 
 ## Installation
+
+Requires **Node.js 22.12+** (Chai 6 is published as an ES module and is loaded with `require()`).
 
 ```bash
 npm install
@@ -123,8 +125,6 @@ Run all API tests:
 
 ```bash
 npm test
-# or
-npm run test:api
 ```
 
 Run a single test suite:

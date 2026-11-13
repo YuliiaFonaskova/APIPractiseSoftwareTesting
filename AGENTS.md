@@ -24,21 +24,21 @@ Every service in `business/services/` extends `BaseApiClient`.
 
 ## Commands
 
-| Action            | Command                            |
-| :---------------- | :--------------------------------- |
-| Run all tests     | `npm test` (or `npm run test:api`) |
-| Run one spec      | `npx mocha tests/auth.test.js`     |
-| Open HTML report  | `npm run report`                   |
-| Lint              | `npm run lint`                     |
-| Format (write)    | `npm run format`                   |
-| Check format (CI) | `npx prettier --check .`           |
+| Action            | Command                        |
+| :---------------- | :----------------------------- |
+| Run all tests     | `npm test`                     |
+| Run one spec      | `npx mocha tests/auth.test.js` |
+| Open HTML report  | `npm run report`               |
+| Lint              | `npm run lint`                 |
+| Format (write)    | `npm run format`               |
+| Check format (CI) | `npx prettier --check .`       |
 
 ## CI Order
 
 `.github/workflows/api.yml` runs two jobs:
 
 1. `lint`: `npm run lint` → `npx prettier --check .`
-2. `api-tests`: `npm run test:api` → uploads `mochawesome-report/` artifact.
+2. `api-tests`: `npm test` → uploads `mochawesome-report/` artifact.
 
 ## Test Data
 
