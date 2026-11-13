@@ -1,6 +1,10 @@
 # Restful Booker API Tests
 
+[![API Tests](https://github.com/YuliiaFonaskova/APIPractiseSoftwareTesting/actions/workflows/api.yml/badge.svg)](https://github.com/YuliiaFonaskova/APIPractiseSoftwareTesting/actions/workflows/api.yml)
+
 API test automation project created with JavaScript, Native Fetch API, Mocha, and Chai for the **Restful Booker** application (https://restful-booker.herokuapp.com).
+
+- [Restful Booker API Documentation](https://restful-booker.herokuapp.com/apidoc/index.html)
 
 The project follows a layered architecture:
 
@@ -99,7 +103,7 @@ tests/
 - Automatic retry (`retries: 2`) for transient network issues
 - Environment variables configured via `.env` and `dotenv`
 - HTML and JSON test reports generated via `mochawesome`
-- CI/CD integration with **GitHub Actions** and **Jenkins**
+- CI integration with **GitHub Actions** (using `API_USERNAME` and `API_PASSWORD` secrets, with default demo fallbacks)
 
 ---
 

@@ -6,26 +6,32 @@ Application Under Test (AUT): **Restful Booker API** (`https://restful-booker.he
 
 ## 1. Coverage Matrix
 
-| ID        | Suite              | Title                                                 | Method & Endpoint     | Priority | Automation Status | Spec File                        |
-| :-------- | :----------------- | :---------------------------------------------------- | :-------------------- | :------- | :---------------- | :------------------------------- |
-| `AUTH-01` | Authentication     | Successful token creation with valid credentials      | `POST /auth`          | P1       | Automated         | `tests/auth.test.js`             |
-| `AUTH-02` | Authentication     | Token creation fails with invalid password            | `POST /auth`          | P1       | Automated         | `tests/auth.test.js`             |
-| `AUTH-03` | Authentication     | Token creation fails with non-existent username       | `POST /auth`          | P2       | Automated         | `tests/auth.test.js`             |
-| `AUTH-04` | Authentication     | Token creation fails with empty credentials           | `POST /auth`          | P2       | Automated         | `tests/auth.test.js`             |
-| `BKG-01`  | Booking CRUD       | Create a new booking with valid data                  | `POST /booking`       | P1       | Automated         | `tests/booking.crud.test.js`     |
-| `BKG-02`  | Booking CRUD       | Get created booking details by ID                     | `GET /booking/:id`    | P1       | Automated         | `tests/booking.crud.test.js`     |
-| `BKG-03`  | Booking CRUD       | Filter bookings list by firstname and lastname        | `GET /booking`        | P2       | Automated         | `tests/booking.crud.test.js`     |
-| `BKG-04`  | Booking CRUD       | Full update of existing booking                       | `PUT /booking/:id`    | P1       | Automated         | `tests/booking.crud.test.js`     |
-| `BKG-05`  | Booking CRUD       | Partial update of existing booking                    | `PATCH /booking/:id`  | P2       | Automated         | `tests/booking.crud.test.js`     |
-| `BKG-06`  | Booking CRUD       | Delete existing booking and verify removal            | `DELETE /booking/:id` | P1       | Automated         | `tests/booking.crud.test.js`     |
-| `NEG-01`  | Negative Scenarios | Get non-existent booking by ID returns 404            | `GET /booking/:id`    | P2       | Automated         | `tests/booking.negative.test.js` |
-| `NEG-02`  | Negative Scenarios | Update booking without auth token returns 403         | `PUT /booking/:id`    | P1       | Automated         | `tests/booking.negative.test.js` |
-| `NEG-03`  | Negative Scenarios | Delete booking with invalid auth token returns 403    | `DELETE /booking/:id` | P1       | Automated         | `tests/booking.negative.test.js` |
-| `NEG-04`  | Negative Scenarios | Create booking with incomplete payload returns 500    | `POST /booking`       | P2       | Automated         | `tests/booking.negative.test.js` |
-| `NEG-05`  | Negative Scenarios | Partial update booking without auth token returns 403 | `PATCH /booking/:id`  | P1       | Automated         | `tests/booking.negative.test.js` |
-| `NEG-06`  | Negative Scenarios | Update non-existent booking returns 405               | `PUT /booking/:id`    | P2       | Automated         | `tests/booking.negative.test.js` |
-| `NEG-05`  | Negative Scenarios | Partial update booking without auth token returns 403 | `PATCH /booking/:id`  | P1       | Automated         | `tests/booking.negative.test.js` |
-| `NEG-06`  | Negative Scenarios | Update non-existent booking returns 405               | `PUT /booking/:id`    | P2       | Automated         | `tests/booking.negative.test.js` |
+Format: **ID** · Priority · Status — Title — `Method & Endpoint`
+
+#### Authentication (`tests/auth.test.js`)
+
+- **AUTH-01** · P1 · Automated — Successful token creation with valid credentials — `POST /auth`
+- **AUTH-02** · P1 · Automated — Token creation fails with invalid password — `POST /auth`
+- **AUTH-03** · P2 · Automated — Token creation fails with non-existent username — `POST /auth`
+- **AUTH-04** · P2 · Automated — Token creation fails with empty credentials — `POST /auth`
+
+#### Booking CRUD (`tests/booking.crud.test.js`)
+
+- **BKG-01** · P1 · Automated — Create a new booking with valid data — `POST /booking`
+- **BKG-02** · P1 · Automated — Get created booking details by ID — `GET /booking/:id`
+- **BKG-03** · P2 · Automated — Filter bookings list by firstname and lastname — `GET /booking`
+- **BKG-04** · P1 · Automated — Full update of existing booking — `PUT /booking/:id`
+- **BKG-05** · P2 · Automated — Partial update of existing booking — `PATCH /booking/:id`
+- **BKG-06** · P1 · Automated — Delete existing booking and verify removal — `DELETE /booking/:id`
+
+#### Negative Scenarios (`tests/booking.negative.test.js`)
+
+- **NEG-01** · P2 · Automated — Get non-existent booking by ID returns 404 — `GET /booking/:id`
+- **NEG-02** · P1 · Automated — Update booking without auth token returns 403 — `PUT /booking/:id`
+- **NEG-03** · P1 · Automated — Delete booking with invalid auth token returns 403 — `DELETE /booking/:id`
+- **NEG-04** · P2 · Automated — Create booking with incomplete payload returns 500 — `POST /booking`
+- **NEG-05** · P1 · Automated — Partial update booking without auth token returns 403 — `PATCH /booking/:id`
+- **NEG-06** · P2 · Automated — Update non-existent booking returns 405 — `PUT /booking/:id`
 
 ---
 
