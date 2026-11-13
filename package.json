@@ -1,23 +1,24 @@
 {
   "name": "apipractisesoftwaretesting",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "test": "mocha",
     "test:api": "mocha",
+    "report": "start mochawesome-report/mochawesome.html",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Yuliia Fonaskova",
   "license": "ISC",
-  "description": "",
+  "description": "API tests for Restful Booker (Mocha + Chai + native fetch)",
   "devDependencies": {
     "@eslint/js": "^9.39.4",
     "chai": "^6.2.2",
     "eslint": "^9.39.4",
     "globals": "^17.7.0",
     "mocha": "^11.7.6",
+    "mochawesome": "^8.1.1",
     "prettier": "^3.9.4"
   },
   "dependencies": {

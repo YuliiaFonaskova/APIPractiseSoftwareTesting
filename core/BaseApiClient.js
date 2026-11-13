@@ -9,6 +9,7 @@ class BaseApiClient {
     };
   }
 
+  // Core HTTP method that merges default/custom headers and serializes JSON body
   async request(endpoint, options = {}) {
     const { method = "GET", headers = {}, body } = options;
 
@@ -16,10 +17,11 @@ class BaseApiClient {
       method,
       headers: {
         ...this.defaultHeaders,
-        ...headers,
+        ...headers, // Custom headers (e.g. Cookie token) override or extend defaults
       },
     };
 
+    // Attach body only for methods that send payload (POST, PUT, PATCH)
     if (body !== undefined) {
       config.body = JSON.stringify(body);
     }
@@ -27,6 +29,7 @@ class BaseApiClient {
     return fetch(`${this.baseUrl}${endpoint}`, config);
   }
 
+  // Thin wrappers around request() for each HTTP method
   async get(endpoint, headers = {}) {
     return this.request(endpoint, { method: "GET", headers });
   }

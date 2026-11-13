@@ -3,14 +3,14 @@ const globals = require("globals");
 
 module.exports = [
   {
-    ignores: ["node_modules/"],
+    ignores: ["node_modules/", "mochawesome-report/"],
   },
   js.configs.recommended,
   {
     files: ["**/*.js"],
     languageOptions: {
       ecmaVersion: "latest",
-      sourceType: "module",
+      sourceType: "commonjs",
       globals: {
         ...globals.node,
         ...globals.mocha,
