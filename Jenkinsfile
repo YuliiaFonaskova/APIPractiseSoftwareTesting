@@ -9,6 +9,11 @@ pipeline {
         nodejs 'NodeJS 22'
     }
 
+    environment {
+        API_USERNAME = credentials('restful-booker-username')
+        API_PASSWORD = credentials('restful-booker-password')
+    }
+
     stages {
         stage('Clone repository') {
             steps {
@@ -26,6 +31,15 @@ pipeline {
             steps {
                 bat 'npm run test:api'
             }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts(
+                artifacts: 'mochawesome-report/**/*',
+                allowEmptyArchive: true
+            )
         }
     }
 }

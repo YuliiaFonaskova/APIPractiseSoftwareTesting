@@ -1,0 +1,8 @@
+{
+  "badCredentials": "Bad credentials",
+  "created": "Created",
+  "forbidden": "Forbidden",
+  "notFound": "Not Found",
+  "methodNotAllowed": "Method Not Allowed",
+  "internalServerError": "Internal Server Error"
+}

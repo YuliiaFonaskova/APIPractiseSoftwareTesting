@@ -13,10 +13,12 @@ class BookingService extends BaseApiClient {
     return this.get(endpoints.bookingById(bookingId));
   }
 
+  // No token needed: anyone can create a booking
   async createBooking(bookingData) {
     return this.post(endpoints.booking, bookingData);
   }
 
+  // PUT
   async updateBooking(bookingId, updatedBookingData, token) {
     const headers = token ? { Cookie: `token=${token}` } : {};
     return this.put(
@@ -26,6 +28,7 @@ class BookingService extends BaseApiClient {
     );
   }
 
+  // PATCH
   async partialUpdateBooking(bookingId, partialData, token) {
     const headers = token ? { Cookie: `token=${token}` } : {};
     return this.patch(endpoints.bookingById(bookingId), partialData, headers);

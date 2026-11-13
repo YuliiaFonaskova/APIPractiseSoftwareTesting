@@ -1,0 +1,31 @@
+{
+  "validBooking": {
+    "firstname": "Yuliia",
+    "lastname": "Fonaskova",
+    "totalprice": 150,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2026-07-01",
+      "checkout": "2026-07-05"
+    },
+    "additionalneeds": "Breakfast"
+  },
+  "updatedBooking": {
+    "firstname": "Asya",
+    "lastname": "Fonaskova",
+    "totalprice": 250,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2026-08-01",
+      "checkout": "2026-08-05"
+    },
+    "additionalneeds": "Dinner"
+  },
+  "partialUpdate": {
+    "firstname": "UpdatedName",
+    "totalprice": 300
+  },
+  "invalidBooking": {
+    "firstname": "Yuliia"
+  }
+}
