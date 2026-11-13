@@ -1,7 +1,3 @@
-# Restful Booker API Tests
-
-[![API Tests](https://github.com/YuliiaFonaskova/APIPractiseSoftwareTesting/actions/workflows/api.yml/badge.svg)](https://github.com/YuliiaFonaskova/APIPractiseSoftwareTesting/actions/workflows/api.yml)
-
 API test automation project created with JavaScript, Native Fetch API, Mocha, and Chai for the **Restful Booker** application (https://restful-booker.herokuapp.com).
 
 - [Restful Booker API Documentation](https://restful-booker.herokuapp.com/apidoc/index.html)
