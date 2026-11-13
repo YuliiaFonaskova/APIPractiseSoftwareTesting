@@ -8,6 +8,17 @@ async function getToken() {
     password: process.env.API_PASSWORD,
   });
   const body = await response.json();
+
+  // Fail fast: the API answers 200 OK with {"reason":"Bad credentials"} instead
+  // of 401, so without this check every protected-endpoint test would fail with
+  // a confusing 403 and hide the real cause (broken .env credentials).
+  if (!body.token) {
+    throw new Error(
+      `Failed to obtain auth token (status ${response.status}). ` +
+        `Verify API_USERNAME and API_PASSWORD in .env.`
+    );
+  }
+
   return body.token;
 }
 

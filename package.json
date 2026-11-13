@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "scripts": {
     "test": "mocha",
-    "test:api": "mocha",
     "report": "start mochawesome-report/mochawesome.html",
     "lint": "eslint .",
     "format": "prettier --write ."
@@ -12,6 +11,9 @@
   "author": "Yuliia Fonaskova",
   "license": "ISC",
   "description": "API tests for Restful Booker (Mocha + Chai + native fetch)",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
     "chai": "^6.2.2",

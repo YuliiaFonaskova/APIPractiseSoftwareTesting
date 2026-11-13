@@ -2,6 +2,6 @@
   "require": ["dotenv/config"],
   "spec": ["tests/**/*.js"],
   "timeout": 10000,
-  "retries": 2,
+  "retries": 0,
   "reporter": "mochawesome"
 }
