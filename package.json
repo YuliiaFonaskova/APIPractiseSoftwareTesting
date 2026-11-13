@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:api": "mocha tests/**/*.js",
+    "test": "mocha",
+    "test:api": "mocha",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
@@ -18,5 +19,8 @@
     "globals": "^17.7.0",
     "mocha": "^11.7.6",
     "prettier": "^3.9.4"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.10"
   }
 }

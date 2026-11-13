@@ -1,21 +1,17 @@
 const { expect } = require("chai");
-
 const { bookingData, updatedBookingData } = require("../data/bookingData");
-
-const {
-  createToken,
-  createBooking,
-  getBookingById,
-  updateBooking,
-  deleteBooking,
-} = require("../services/bookingService");
+const authService = require("../business/services/AuthService");
+const bookingService = require("../business/services/BookingService");
 
 describe("Restful Booker API tests", function () {
   let token;
   let bookingId;
 
   it("should create auth token", async function () {
-    const response = await createToken();
+    const response = await authService.createToken({
+      username: process.env.API_USERNAME,
+      password: process.env.API_PASSWORD,
+    });
     const body = await response.json();
 
     expect(response.status).to.equal(200);
@@ -27,7 +23,7 @@ describe("Restful Booker API tests", function () {
   });
 
   it("should create a booking", async function () {
-    const response = await createBooking(bookingData);
+    const response = await bookingService.createBooking(bookingData);
     const body = await response.json();
 
     expect(response.status).to.equal(200);
@@ -39,7 +35,7 @@ describe("Restful Booker API tests", function () {
   });
 
   it("should get created booking by id", async function () {
-    const response = await getBookingById(bookingId);
+    const response = await bookingService.getBookingById(bookingId);
     const body = await response.json();
 
     expect(response.status).to.equal(200);
@@ -51,7 +47,11 @@ describe("Restful Booker API tests", function () {
   });
 
   it("should update created booking", async function () {
-    const response = await updateBooking(bookingId, token, updatedBookingData);
+    const response = await bookingService.updateBooking(
+      bookingId,
+      updatedBookingData,
+      token
+    );
 
     const body = await response.json();
 
@@ -61,7 +61,7 @@ describe("Restful Booker API tests", function () {
   });
 
   it("should delete created booking", async function () {
-    const response = await deleteBooking(bookingId, token);
+    const response = await bookingService.deleteBooking(bookingId, token);
     const body = await response.text();
 
     expect(response.status).to.equal(201);
