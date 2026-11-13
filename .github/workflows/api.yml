@@ -30,6 +30,11 @@ jobs:
     needs: lint
     runs-on: ubuntu-latest
 
+    env:
+      BASE_URL: https://restful-booker.herokuapp.com
+      API_USERNAME: ${{ secrets.API_USERNAME || 'admin' }}
+      API_PASSWORD: ${{ secrets.API_PASSWORD || 'password123' }}
+
     steps:
       - uses: actions/checkout@v4
 

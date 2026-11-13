@@ -1,0 +1,5 @@
+{
+  "require": ["dotenv/config"],
+  "spec": ["tests/**/*.js"],
+  "timeout": 10000
+}
